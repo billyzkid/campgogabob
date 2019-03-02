@@ -1,0 +1,7 @@
+{
+  "name": "campgogabob",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "http-server ./src -o"
+  }
+}

@@ -13,3 +13,11 @@ trim_trailing_whitespace = true
 # Markdown files
 [*.md]
 trim_trailing_whitespace = false
+
+# Configuration files
+[*.json]
+indent_size = 2
+
+# Package files
+[{package.json,package-lock.json}]
+end_of_line = lf

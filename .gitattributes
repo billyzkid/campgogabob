@@ -1,2 +1,7 @@
 # Set default behavior to automatically normalize line endings
 * text=auto
+
+# NPM is platform-opinionated concerning line endings
+# See https://github.com/npm/npm/issues/17161
+package.json text eol=lf
+package-lock.json text eol=lf
