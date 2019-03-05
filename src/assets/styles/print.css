@@ -1,0 +1,51 @@
+html, body {
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.fullpage-wrapper {
+    height: auto !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+.fp-table, .fp-tableCell {
+    height: auto !important;
+}
+
+#fp-nav {
+    display: none !important;
+}
+
+div.trail {
+    display: none !important;
+}
+
+li.title-space {
+    display: none !important;
+}
+
+video {
+    display: none !important;
+}
+
+#logo {
+    width: 200px;
+    height: 50px;
+}
+
+#logo #various path {
+    fill: #000 !important;
+}
+
+#logo #ways path {
+    fill: #000 !important;
+}
+
+#logo #tittle path {
+    fill: #000 !important;
+}
+
+#back-to-top {
+    display: none !important;
+}
