@@ -58,8 +58,6 @@ function checkSize() {
 }
 
 $(document).ready(function () {
-    //new WOW().init();
-
     showQuote();
 
     setInterval(function () {
