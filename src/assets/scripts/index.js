@@ -1,122 +1,84 @@
-var isPhoneDevice = "ontouchstart" in document.documentElement;
+var quotes = [
+    "Variousways design gets \"Todays Winner\" at csswinner.com. Showcasing only high quality and imaginative websites.",
+    "A Variousways website was featured in Communication Arts Magazine \"Webpick of the Day\"",
+    "Variousways websites featured in Awwwards Book: \"Through its pages you will find the websites that mark nowadays trends in web design, the ones that represent todays web standards, and the finest web design studios and agencies of the year.\"",
+    "Jon Montenegro from variousways wins a AIGA Philadelphia Design Award for interactive design work. AIGA Philadelphia: “Our renowned panel of judges have spoken. The vast array of submissions has been narrowed down to the top 100, representing the best talent Philadelphia has to offer.”"
+];
+
+function showQuote() {
+    var index = Math.floor(Math.random() * quotes.length);
+    var quote = quotes[index];
+
+    $("#testimonials").html(quote).fadeIn(1000);
+}
+
+// https://www.paulirish.com/2009/throttled-smartresize-jquery-event-handler/
+// http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+(function ($, sr) {
+    var debounce = function (func, threshold, execAsap) {
+        var timeout;
+
+        return function debounced() {
+            var obj = this;
+            var args = arguments;
+
+            function delayed() {
+                if (!execAsap) {
+                    func.apply(obj, args);
+                }
+
+                timeout = null;
+            };
+
+            if (timeout) {
+                clearTimeout(timeout);
+            } else if (execAsap) {
+                func.apply(obj, args);
+            }
+
+            timeout = setTimeout(delayed, threshold || 100);
+        };
+    }
+    jQuery.fn[sr] = function (fn) {
+        return fn ? this.bind("resize", debounce(fn)) : this.trigger(sr);
+    };
+})(jQuery, "smartresize");
+
+function checkSize() {
+    var viewportWidth = window.innerWidth;
+
+    if (viewportWidth > 767) {
+        $("html").removeClass("mobile").removeClass("tablet").addClass("desktop");
+    } else {
+        $("html").addClass("mobile").removeClass("tablet").removeClass("desktop");
+        $("#page1").css("height", $(window).height());
+    }
+
+    console.log(viewportWidth);
+}
 
 $(document).ready(function () {
     //new WOW().init();
 
-    var offset = 220;
-    var duration = 500;
+    showQuote();
 
-    jQuery(window).scroll(function () {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery("#back-to-top").fadeIn(duration);
-        } else {
-            jQuery("#back-to-top").fadeOut(duration);
-        }
-    });
+    setInterval(function () {
+        $("#testimonials").fadeOut(1000, function () {
+            showQuote();
+        });
+    }, 12000);
 
-    jQuery("#back-to-top").click(function (event) {
-        event.preventDefault();
-        jQuery("html, body").animate({ scrollTop: 0 }, duration);
-        return false;
-    });
+    $("#year").html(new Date().getFullYear());
 
-    (function ($, sr) {
-        var debounce = function (func, threshold, execAsap) {
-            var timeout;
+    checkSize();
 
-            return function debounced() {
-                var obj = this;
-                var args = arguments;
-
-                function delayed() {
-                    if (!execAsap) func.apply(obj, args);
-                    timeout = null;
-                };
-
-                if (timeout) clearTimeout(timeout);
-                else if (execAsap) func.apply(obj, args);
-
-                timeout = setTimeout(delayed, threshold || 100);
-            };
-        }
-        jQuery.fn[sr] = function (fn) {
-            return fn ? this.bind("resize", debounce(fn)) : this.trigger(sr);
-        };
-    })(jQuery, "smartresize");
-
-    function viewport() {
-        var e = window;
-        var a = "inner";
-
-        if (!("innerWidth" in window)) {
-            a = "client";
-            e = document.documentElement || document.body;
-        }
-
-        return {
-            width: e[a + "Width"],
-            height: e[a + "Height"]
-        };
-    }
-
-    function checkSize() {
-        var vpWidth = viewport().width;
-        console.log(vpWidth);
-        if (vpWidth >= 768) {
-            $("html").removeClass("mobile").removeClass("tablet").addClass("desktop");
-        } else if (vpWidth <= 767) {
-            $("html").addClass("mobile").removeClass("tablet").removeClass("desktop");
-            var viewH = $(window).height();
-            $("#page1").css("height", viewH);
-            console.log("change");
-        }
-    }
     $(window).smartresize(function () {
         checkSize();
     });
 
-    checkSize();
-
-    // $("#testimonials").load("assets/php/quotes.php", function () {
-    //     $("#testimonials").fadeIn(1000);
-    // });
-
-    // var refreshId = setInterval(function () {
-    //     $("#testimonials").fadeOut(1000, function () {
-    //         $("#testimonials").load("assets/php/quotes.php?randval=" + Math.random(), function () {
-    //             $("#testimonials").fadeIn(1000);
-    //         });
-    //     });
-    // }, 12000);
-
-    $.ajaxSetup({ cache: false });
-
-    function getYear() {
-        var d = new Date();
-        var n = d.getFullYear();
-        document.getElementById("year").innerHTML = n;
-    }
-
-    getYear();
-
     $(".nav-icon").click(function () {
         $(this).toggleClass("open");
         $("header").toggleClass("open")
-    });
-
-    (function ($) {
-        "use strict";
-        $.fn.heightFull = function () {
-            var totalHeight = $("window").height();
-            var heightMinus = totalHeight;
-            $(this).css("height", heightMinus);
-        };
-    }(jQuery));
-
-    $("main section").heightFull();
-
-    $(window).resize(function () {
-        $("main section").heightFull();
     });
 
     $("#nav > ul > li > a").click(function () {
@@ -124,20 +86,28 @@ $(document).ready(function () {
         $(".nav-icon").removeClass("open");
     });
 
-    if (isPhoneDevice) {
-        //mobile
-    } else {
+    $("#back-to-top").click(function (event) {
+        event.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, 500);
+        return false;
+    });
 
-    }
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 220) {
+            $("#back-to-top").fadeIn(500);
+        } else {
+            $("#back-to-top").fadeOut(500);
+        }
+    });
 
     $("#wrapper").fullpage({
-        anchors: ["section1", "section2", "section3", "section4", "section5", "section6", "section7"],
         menu: "#nav ul",
+        anchors: ["section1", "section2", "section3", "section4", "section5", "section6", "section7"],
         css3: true,
-        "navigation": true,
-        "navigationPosition": "right",
-        scrollingSpeed: 700,
+        navigation: true,
+        navigationPosition: "right",
         scrollOverflow: true,
+        scrollingSpeed: 700,
         responsiveWidth: 767
     });
 });
