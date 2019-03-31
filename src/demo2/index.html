@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CampGogaBob</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta name="keywords" content="fun,family,camp,walnut creek" />
+        <link rel="stylesheet" type="text/css" href="assets/styles/fullpage.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/styles/fullpage.examples.css" />
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900" />
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/screen.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="assets/styles/print.css" />
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        <link rel="apple-touch-icon" href="assets/images/favicon.ico" />
+    </head>
+    <body>
+        <div class="actions">
+            <div class="actions-option">
+                <ul id="actions">
+                    <li id="turnOn" class="active">On</li>
+                    <li id="turnOff">Off</li>
+                </ul>
+            </div>
+            <div class="actions-option">
+                Parallax offset:
+                <select data-option="offset">
+                    <option value="30">30%</option>
+                    <option value="60" selected>62%</option>
+                    <option value="100">100%</option>
+                </select>
+            </div>
+            <div class="actions-option">
+                Parallax type:
+                <select data-option="type">
+                    <option value="reveal" selected>reveal</option>
+                    <option value="cover">cover</option>
+                </select>
+            </div>
+            <div class="actions-option">
+                scrollBar:
+                <select data-option="scrollBar">
+                    <option value="false" selected>false</option>
+                    <option value="true">true</option>
+                </select>
+            </div>
+            <div class="actions-option">
+                autoScrolling:
+                <select data-option="autoScrolling">
+                    <option value="true">true</option>
+                    <option value="false">false</option>
+                </select>
+            </div>
+            <div class="actions-option actions-compatible">
+                Compatible?
+                <div class="note">
+                    <b class="note-title">NOT compatible with the following fullPage.js features:</b>
+                    <ul>
+                        <li>The `fp-auto-height` feature</li>
+                        <li>Offset Sections extension</li>
+                        <li>Drag And Move extension</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul id="menu">
+            <li data-menuanchor="page1"><a href="#page1">First slide</a></li>
+            <li data-menuanchor="page2"><a href="#page2">Second slide</a></li>
+            <li data-menuanchor="page3"><a href="#page3">Third slide</a></li>
+            <li data-menuanchor="page4"><a href="#page4">Fourth slide</a></li>
+        </ul>
+        <ul class="preview-extensions-menu">
+            <li class="preview-more-extensions"><a href="http://alvarotrigo.com/fullPage/extensions/">More extensions</a></li>
+            <li class="preview-buy-extension"><a href="https://gum.co/fullpageParallax">Download extension</a></li>
+        </ul>
+        <div id="myContainer">
+            <div class="section" id="section1">
+                <div class="slide" id="slide1-1">
+                    <div class="fp-bg"></div>
+                    <h1>PARALLAX</h1>
+                    <p>Use `parallax: true`. Made easy.</p>
+                    <div class="button" id="download">
+                        <a href="https://gum.co/fullpageParallax" class="button-purchase">I want it!</a>
+                    </div>
+                    <p class="documentation">
+                        <a href="https://github.com/alvarotrigo/fullPage.js/wiki/Extension---Parallax">Documentation</a>
+                    </p>
+                </div>
+                <div class="slide" id="slide1-2">
+                    <div class="fp-bg"></div>
+                    <div class="intro">
+                        <h1>fullPage.js</h1>
+                        <img src="assets/images/trusted.png" />
+                    </div>
+                </div>
+                <div class="slide" id="slide1-3">
+                    <div class="fp-bg"></div>
+                    <div class="intro">
+                        <h1>Free support</h1>
+                        <p>Extension issues are supported at no extra cost!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section2">
+                <div class="fp-bg" id="section2"></div>
+                <div class="intro">
+                    <h1>FLEXIBLE</h1>
+                    <p>Put not limits to yourself</p>
+                    <p>Use parallax even without scroll bar!</p>
+                </div>
+            </div>
+            <div class="section" id="section3">
+                <div class="slide" id="slide3-1">
+                    <div class="fp-bg"></div>
+                    <div class="intro">
+                        <h1>TAKE CONTROL</h1>
+                        <p>Totally configurable.</p>
+                        <p>For sections & slides! </p>
+                    </div>
+                </div>
+                <div class="slide" id="slide3-2">
+                    <div class="fp-bg"></div>
+                    <div class="intro">
+                        <h1>GUARRANTEE</h1>
+                        <p>30 days money back guarratee if no domain was activated.</p>
+                    </div>
+                </div>
+                <div class="slide" id="slide3-3">
+                    <div class="intro">
+                        <div class="fp-bg"></div>
+                        <h1>TRUSTED</h1>
+                        <p>Join thoudands of other developers who trusted fullPage.js extensions!</p>
+                    </div>
+                </div>
+                <div class="slide" id="slide3-4">
+                    <div class="fp-bg"></div>
+                    <div class="intro">
+                        <h1>DOCUMENTED</h1>
+                        <p>If fullPage.js is known for one thing it's for its great documentation!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section4">
+                <div class="fp-bg"></div>
+                <div class="intro">
+                    <h1>IMPRESS</h1>
+                    <p>Take it to the next level!</p>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="_4" value="3" />
+        <script src="assets/scripts/fullpage.parallax.min.js"></script>
+        <script src="assets/scripts/fullpage.extensions.min.js"></script>
+        <script src="assets/scripts/index.js"></script>
+    </body>
+</html>

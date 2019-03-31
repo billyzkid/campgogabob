@@ -2,7 +2,7 @@
   "name": "campgogabob",
   "version": "0.0.0",
   "scripts": {
-    "start": "http-server ./src -o"
+    "start": "http-server ./src/demo2 -o"
   },
   "devDependencies": {
     "http-server": "^0.11.1"
