@@ -1,7 +1,9 @@
-new fullpage("#myContainer", {
+new fullpage("main", {
     licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
-    menu: "#menu",
+    menu: "nav",
     anchors: ["page1", "page2", "page3", "page4"],
+    sectionSelector: "section",
+    slideSelector: "aside",
     slidesNavigation: true,
     parallax: true,
     parallaxKey: "c2hlbGZseW5lLmNvbS5hdV8zMXJjR0Z5WVd4c1lYZz1BcHA=",

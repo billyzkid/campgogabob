@@ -1,38 +1,78 @@
-h1 {
+body {
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+nav>a {
+    float: left;
+    font-family: arial, helvetica;
+    font-size: 1em;
+    text-decoration: none;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 9px 18px;
+    margin: 10px;
+}
+
+nav>a.active {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+nav>a:hover {
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+main>section {
+    text-align: center;
+}
+
+main h1 {
     color: #fff;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 900;
     font-size: 8em;
     letter-spacing: -3px;
-    text-shadow: 0 0.3rem 0.9rem rgba(0,0,0,.4);
+    text-shadow: 0 0.3rem 0.9rem rgba(0, 0, 0, .4);
+    margin: 0;
 }
 
-p {
+main p {
     color: #fff;
     font-family: "Source Sans Pro", sans-serif;
-    text-shadow: -1px 1px 8px rgba(0,0,0,.8);
+    font-size: 2em;
+    text-shadow: -1px 1px 8px rgba(0, 0, 0, .8);
+    margin: 0;
 }
 
-#slide1-1 h1 {
-    color: #444;
-}
-
-.fp-bg {
+main .fp-bg {
     background-size: cover;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
 }
 
-#slide1-1 .fp-bg {
+#section1-1 h1 {
+    color: #444;
+}
+
+#section1-1 .fp-bg {
     background-image: url("../images/background-01.jpg");
     background-position: center 80%;
 }
 
-#slide1-2 .fp-bg {
+#section1-2 .fp-bg {
     background-image: url("../images/background-05.jpg");
 }
 
-#slide1-3 .fp-bg {
+#section1-3 .fp-bg {
     background-image: url("../images/background-06.jpg");
 }
 
@@ -41,20 +81,20 @@ p {
     background-position: center 60%;
 }
 
-#slide3-1 .fp-bg {
+#section3-1 .fp-bg {
     background-image: url("../images/background-03.jpg");
     background-position: 50% 65%;
 }
 
-#slide3-2 .fp-bg {
+#section3-2 .fp-bg {
     background-image: url("../images/background-05.jpg");
 }
 
-#slide3-3 .fp-bg {
+#section3-3 .fp-bg {
     background-image: url("../images/background-06.jpg");
 }
 
-#slide3-4 .fp-bg {
+#section3-4 .fp-bg {
     background-image: url("../images/background-07.jpg");
 }
 
