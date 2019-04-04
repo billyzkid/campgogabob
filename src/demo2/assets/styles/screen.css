@@ -95,7 +95,7 @@ header {
 }
 
 #nav-toggle {
-    display: flex;
+    display: inline-block;
     width: 32px;
     height: 23px;
     cursor: pointer;
@@ -107,7 +107,7 @@ header {
 #nav-toggle>span {
     position: absolute;
     display: block;
-    width: 100%;
+    width: 32px;
     height: 3px;
     border-radius: 1px;
     background-color: #fff;
@@ -119,19 +119,19 @@ header {
 }
 
 #nav-toggle>span:nth-child(1) {
-    align-self: flex-start;
+    top: 0px;
 }
 
 #nav-toggle>span:nth-child(2) {
-    align-self: center;
+    top: 10px;
 }
 
 #nav-toggle>span:nth-child(3) {
-    align-self: flex-end;
+    top: 20px;
 }
 
 #nav-toggle.open>span:nth-child(1) {
-    align-self: center;
+    top: 10px;
     transform: rotateZ(45deg);
 }
 
@@ -140,7 +140,7 @@ header {
 }
 
 #nav-toggle.open>span:nth-child(3) {
-    align-self: center;
+    top: 10px;
     transform: rotateZ(-45deg);
 }
 
