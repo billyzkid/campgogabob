@@ -13,3 +13,7 @@ new fullpage("main", {
     scrollBar: false,
     fitToSection: false
 });
+
+document.getElementById("nav-toggle").addEventListener("click", function (e) {
+    this.classList.toggle("open");
+});
