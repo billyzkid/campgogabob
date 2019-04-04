@@ -1,7 +1,7 @@
 new fullpage("main", {
     licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
     menu: "nav",
-    anchors: ["page1", "page2", "page3", "page4"],
+    anchors: ["home", "fun", "family", "adventure"],
     sectionSelector: "section",
     slideSelector: "aside",
     slidesNavigation: true,
