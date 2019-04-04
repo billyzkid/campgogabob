@@ -2,6 +2,26 @@ body {
     margin: 0;
 }
 
+
+button {
+    color: #000;
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    padding: 15px 30px;
+    margin: 20px 0 0 0;
+    outline: none;
+}
+
+button:hover {
+    color: #fff;
+    background-color: #3cc63c;
+}
+
+button:active {
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.8);
+}
+
 nav {
     position: fixed;
     top: 0;
@@ -31,73 +51,84 @@ nav>a:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-main>section {
+section {
     text-align: center;
 }
 
-main h1 {
+section h1 {
     color: #fff;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 900;
     font-size: 8em;
     letter-spacing: -3px;
-    text-shadow: 0 0.3rem 0.9rem rgba(0, 0, 0, .4);
+    text-shadow: 0 0.3rem 0.9rem rgba(0, 0, 0, 0.5);
     margin: 0;
 }
 
-main p {
+section p {
     color: #fff;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2em;
-    text-shadow: -1px 1px 8px rgba(0, 0, 0, .8);
+    text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.8);
     margin: 0;
 }
 
-main .fp-bg {
+section .fp-bg {
     background-size: cover;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
 }
 
-#section1-1 h1 {
+/* #section1-1 h1 {
     color: #444;
-}
+} */
+
+/* #section1-1 .fp-bg {
+    background-image: url("../images/cgb/background-17.jpg");
+    background-position: center center;
+} */
 
 #section1-1 .fp-bg {
-    background-image: url("../images/background-01.jpg");
-    background-position: center 80%;
+    background-image: url("../images/cgb/background-04.jpg");
+    background-position: center 40%;
 }
 
 #section1-2 .fp-bg {
-    background-image: url("../images/background-05.jpg");
+    background-image: url("../images/cgb/background-07.jpg");
+    background-position: center 80%;
 }
 
 #section1-3 .fp-bg {
-    background-image: url("../images/background-06.jpg");
+    background-image: url("../images/cgb/background-06.jpg");
+    background-position: center bottom;
 }
 
 #section2 .fp-bg {
-    background-image: url("../images/background-02.jpg");
-    background-position: center 60%;
+    background-image: url("../images/cgb/background-21.jpg");
+    background-position: center center;
 }
 
 #section3-1 .fp-bg {
-    background-image: url("../images/background-03.jpg");
-    background-position: 50% 65%;
+    background-image: url("../images/cgb/background-17.jpg");
+    background-position: center center;
 }
 
 #section3-2 .fp-bg {
-    background-image: url("../images/background-05.jpg");
+    background-image: url("../images/cgb/background-16.jpg");
+    background-position: center top;
 }
 
 #section3-3 .fp-bg {
-    background-image: url("../images/background-06.jpg");
+    background-image: url("../images/cgb/background-09.jpg");
+    background-position: center center;
 }
 
 #section3-4 .fp-bg {
-    background-image: url("../images/background-07.jpg");
+    background-image: url("../images/cgb/background-13.jpg");
+    background-position: center center;
 }
 
 #section4 .fp-bg {
-    background-image: url("../images/background-04.jpg");
+    background-image: url("../images/cgb/background-22.jpg");
+    background-position: center bottom;
 }
