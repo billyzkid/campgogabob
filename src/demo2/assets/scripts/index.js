@@ -16,4 +16,12 @@ new fullpage("main", {
 
 document.getElementById("nav-toggle").addEventListener("click", function (e) {
     this.classList.toggle("open");
+    document.querySelector("nav").classList.toggle("open");
+});
+
+document.querySelectorAll("nav>a").forEach(function (item, index) {
+    item.addEventListener("click", function (e) {
+        document.getElementById("nav-toggle").classList.remove("open");
+        document.querySelector("nav").classList.remove("open");
+    })
 });

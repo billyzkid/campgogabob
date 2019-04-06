@@ -1,5 +1,5 @@
 body {
-    font-family: arial, helvetica;
+    font-family: "Source Sans Pro", sans-serif;
     margin: 0;
 }
 
@@ -9,7 +9,6 @@ section {
 
 section h1 {
     color: #fff;
-    font-family: "Source Sans Pro", sans-serif;
     font-weight: 900;
     font-size: 8em;
     letter-spacing: -3px;
@@ -19,7 +18,6 @@ section h1 {
 
 section p {
     color: #fff;
-    font-family: "Source Sans Pro", sans-serif;
     font-size: 2em;
     text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.8);
     margin: 0;
@@ -85,13 +83,6 @@ section .fp-bg {
     background-position: center 90%;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
 #nav-toggle {
     display: inline-block;
     width: 40px;
@@ -100,6 +91,7 @@ header {
     position: absolute;
     top: 14px;
     right: 14px;
+    z-index: 2;
 }
 
 #nav-toggle>span {
@@ -144,35 +136,49 @@ header {
 }
 
 nav {
-    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #6ff36f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    visibility: hidden;
+}
+
+nav.open {
+    visibility: visible;
 }
 
 nav>a {
-    float: left;
-    font-size: 1em;
+    display: block;
+    padding: 10px;
+    margin: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 2em;
+    line-height: 1em;
+    text-align: center;
     text-decoration: none;
     color: #000;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    padding: 9px 18px;
-    margin: 10px;
+    opacity: 0;
+    transform: translateY(-25%) rotateX(45deg);
+    transition: color 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+    visibility: hidden;
 }
 
-nav>a.active {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
+nav.open>a {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
 }
 
 nav>a:hover {
-    color: #000;
-    background-color: rgba(255, 255, 255, 0.8);
+    color: #fff;
+    transition: none;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+nav>a:first-child {
+    margin-top: 45px;
 }
 
 footer>small {
