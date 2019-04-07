@@ -164,7 +164,7 @@ nav>a {
     text-decoration: none;
     color: #000;
     opacity: 0;
-    transform: translateY(-25%) rotateX(45deg);
+    transform: translateY(-25%);
     transition: color 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
     visibility: hidden;
     backface-visibility: hidden;
