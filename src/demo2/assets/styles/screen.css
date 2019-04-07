@@ -1,6 +1,16 @@
-body {
+html {
     font-family: "Source Sans Pro", sans-serif;
-    margin: 0;
+    font-size: 62.5%;
+}
+
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: 31.25%;
+    }
+}
+
+body {
+    user-select: none;
 }
 
 section {
@@ -9,63 +19,57 @@ section {
 
 section h1 {
     color: #fff;
-    font-weight: 900;
-    font-size: 8em;
-    letter-spacing: -3px;
+    font-weight: bold;
+    font-size: 8rem;
+    letter-spacing: -0.3rem;
     text-shadow: 0 0.3rem 0.9rem rgba(0, 0, 0, 0.5);
-    margin: 0;
+    margin: 0 64px;
 }
 
 section p {
     color: #fff;
-    font-size: 2em;
+    font-size: 3rem;
     text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.8);
-    margin: 0;
+    margin: 0 64px;
 }
 
 section a {
     color: #fff;
 }
 
-section .fp-bg {
-    background-size: cover;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-}
-
 #section1 .fp-bg {
     background-image: url("../images/background-04.jpg");
-    background-position: center 33%;
+    background-position: 43% 33%;
 }
 
 #section2-1 .fp-bg {
     background-image: url("../images/background-06.jpg");
-    background-position: center bottom;
+    background-position: 73% bottom;
 }
 
 #section2-2 .fp-bg {
     background-image: url("../images/background-07.jpg");
-    background-position: center 80%;
+    background-position: right 80%;
 }
 
 #section2-3 .fp-bg {
     background-image: url("../images/background-21.jpg");
-    background-position: center center;
+    background-position: left center;
 }
 
 #section3-1 .fp-bg {
     background-image: url("../images/background-09.jpg");
-    background-position: center center;
+    background-position: 62% center;
 }
 
 #section3-2 .fp-bg {
     background-image: url("../images/background-17.jpg");
-    background-position: center center;
+    background-position: 25% center;
 }
 
 #section3-3 .fp-bg {
     background-image: url("../images/background-16.jpg");
-    background-position: center top;
+    background-position: 86% top;
 }
 
 #section4-1 .fp-bg {
@@ -75,22 +79,23 @@ section .fp-bg {
 
 #section4-2 .fp-bg {
     background-image: url("../images/background-05.jpg");
-    background-position: center center;
+    background-position: 66% center;
 }
 
 #section4-3 .fp-bg {
     background-image: url("../images/background-08.jpg");
-    background-position: center 90%;
+    background-position: 64% 90%;
 }
 
 #nav-toggle {
+    background: red;
     display: inline-block;
     width: 40px;
     height: 31px;
     cursor: pointer;
     position: absolute;
-    top: 14px;
-    right: 14px;
+    top: 11px;
+    right: 11px;
     z-index: 2;
 }
 
@@ -105,10 +110,6 @@ section .fp-bg {
     transition: all 0.25s ease-out;
 }
 
-#nav-toggle.open>span {
-    background-color: #000;
-}
-
 #nav-toggle>span:nth-child(1) {
     top: 4px;
 }
@@ -121,8 +122,12 @@ section .fp-bg {
     top: 24px;
 }
 
-#nav-toggle.open>span:nth-child(1) {
+#nav-toggle.open>span {
     top: 14px;
+    background-color: #000;
+}
+
+#nav-toggle.open>span:nth-child(1) {
     transform: rotateZ(45deg);
 }
 
@@ -131,7 +136,6 @@ section .fp-bg {
 }
 
 #nav-toggle.open>span:nth-child(3) {
-    top: 14px;
     transform: rotateZ(-45deg);
 }
 
@@ -155,8 +159,8 @@ nav>a {
     padding: 10px;
     margin: 0 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    font-size: 2em;
-    line-height: 1em;
+    font-size: 4rem;
+    font-weight: bold;
     text-align: center;
     text-decoration: none;
     color: #000;
@@ -164,6 +168,7 @@ nav>a {
     transform: translateY(-25%) rotateX(45deg);
     transition: color 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
     visibility: hidden;
+    backface-visibility: hidden;
 }
 
 nav.open>a {
@@ -178,13 +183,38 @@ nav>a:hover {
 }
 
 nav>a:first-child {
-    margin-top: 45px;
+    margin-top: 42px;
 }
 
 footer>small {
-    font-size: 0.8em;
     color: #fff;
+    font-size: 2rem;
+    text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.8);
     position: absolute;
     bottom: 10px;
-    right: 14px;
+    right: 15px;
+}
+
+.fp-bg {
+    background-size: cover;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    background-color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+    .fp-controlArrow.fp-prev {
+        border-width: 25px 20px 25px 0;
+    }
+
+    .fp-controlArrow.fp-next {
+        border-width: 25px 0 25px 20px;
+    }
+
+    .fp-controlArrow {
+        margin-top: -25px;
+    }
 }
